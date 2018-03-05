@@ -1,0 +1,568 @@
+$main-font: 'Source Sans Pro', sans-serif
+
+@mixin placeholder()
+  input::-webkit-input-placeholder
+    @content
+  input:-moz-placeholder
+    @content
+  input::-moz-placeholder
+    @content
+  input:-ms-input-placeholder
+    @content
+
+@font-face
+  font-family: 'FontAwesome'
+  src: url('../fonts/fontawesome-webfont.eot?v=4.6.3')
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format("embedded-opentype"), url('../fonts/fontawesome-webfont.woff2?v=4.6.3') format("woff2"), url('../fonts/fontawesome-webfont.woff?v=4.6.3') format("woff"), url('../fonts/fontawesome-webfont.ttf?v=4.6.3') format("truetype"), url('../fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format("svg")
+  font-weight: normal
+  font-style: normal
+
+a
+  &:hover
+    color: #000
+    text-decoration: none
+
+body
+  position: relative
+  left: 0
+
+/*HEADER*/
+.header
+  position: absolute
+  top: 60px
+  left: 0
+  right: 0
+  width: 100%
+.nav
+  background: #000
+  left: -285px
+  height: 100%
+  position: fixed
+  width: 285px
+  &_items
+    list-style: none
+    margin: 50px 0 0 0
+    padding: 0
+  &_item
+    border-bottom: 1px solid #ffffff
+    line-height: 3
+    font-weight: bold
+    &_link
+      padding: 15px 0 0 78px
+      display: block
+      width: 100%
+      height: 100%
+      color: #fff
+      font-size: 20px
+      text-decoration: none
+      text-transform: uppercase
+      &:hover
+        cursor: pointer
+        background: #fff
+
+.nav_open
+  color: #000
+  font-size: 22px
+  cursor: pointer
+
+.nav_close
+  @extend .nav_open
+  position: absolute
+  left: 15px
+  top: 10px
+  font-size: 40px
+  color: #fff
+  &:hover
+    color: #fff
+
+.logo
+  position: relative
+  top: -17px
+  left: 66px
+  &_text
+    position: relative
+    top: 6px
+    font-weight: bold
+    font-size: 30px
+    color: #000
+
+.social_item
+  display: inline-block
+  color: #000
+  text-align: center
+  margin-right: 8px
+  font-size: 22px
+  &last-child
+    margin-right: 0
+
+/*HOME*/
+.home
+  min-height: 800px
+  background: #fcdb00
+  padding-top: 275px
+  &_slogan
+    color: #000
+    font-size: 48px
+    font-weight: bold
+    text-align: center
+  &_des
+    font-size: 20px
+    max-width: 50%
+    text-align: center
+    margin: 20px auto 0 auto
+    line-height: 22px
+  &_btn
+    display: block
+    text-transform: uppercase
+    text-align: center
+    font-weight: bold
+    border: 2px solid #000
+    color: #000
+    transition: 0.4s
+    &:hover
+      background: #000
+      color: #fff
+      transition: 0.4s
+  &_arrow
+    color: #000
+    font-size: 32px
+    margin: 175px auto 0 auto
+    display: block
+    width: 100px
+    text-align: center
+
+/*FEATURES*/
+.features
+  min-height: 850px
+  background: #fff
+  padding-top: 120px
+  &_title
+    text-align: center
+    font-weight: bold
+    font-size: 32px
+  &_des
+    text-align: center
+    color: #a1a1a1
+    margin: 20px auto 100px auto
+    line-height: 1.2
+    font-size: 20px
+    width: 83.333333%
+  &-item
+    height: 150px
+    width: 300px
+    margin: 0 auto 100px auto
+    &_icon
+      font-size: 50px
+      float: left
+      height: 100%
+      margin-right: 20px
+      margin-top: -12px
+    &_title
+      display: inline-block
+      font-weight: bold
+      font-size: 22px
+      text-transform: capitalize
+    &_des
+      display: block
+      font-size: 16px
+      margin-top: 10px
+      color: #a1a1a1
+
+/*PRICE*/
+.prices
+  @extend .features
+  &_title
+    @extend .features_title
+    text-transform: capitalize
+  &_des
+    @extend .features_des
+  &-item
+    min-height: 400px
+    margin-bottom: 100px
+    text-align: center
+    &_icon
+      font-size: 50px
+      width: 100px
+      height: 100px
+      text-align: center
+      line-height: 100px
+      margin: 0 auto 20px auto
+    &_title
+      @extend .features-item_title
+      font-size: 24px
+    &_des
+      @extend .features-item_des
+    &_price
+      display: block
+      font-size: 32px
+      font-weight: bold
+      margin-top: 30px
+      text-align: center
+    &_price-des
+      @extend .features-item_des
+      max-width: 30%
+      border-top: 2px solid #000
+      margin: 0 auto
+    &_btn
+      @extend .home_btn
+
+/*WORKS*/
+.works
+  @extend .features
+  &_title
+    @extend .features_title
+  &_des
+    @extend .features_des
+  &-item
+    height: 280px
+    margin-bottom: 70px
+    text-align: center
+    &_img
+      position: relative
+      height: 220px
+      width: 220px
+      margin: 0 auto
+      overflow: hidden
+      &:hover figcaption
+        opacity: 1
+      &-caption
+        height: 220px
+        width: 220px
+        opacity: 0
+        text-align: center
+        backface-visibility: hidden
+        transition: opacity 0.5s
+        position: absolute
+        top: 0
+        left: 0
+        padding: 20px
+        background: #222
+        &_link
+          cursor: pointer
+          display: inline-block
+          height: 45px
+          width: 45px
+          background: #fff
+          color: #222
+          font-size: 22px
+          position: relative
+          font-weight: bold
+          bottom: -70px
+          padding-top: 4px
+    &_title
+      @extend .features-item_title
+      margin-top: 10px
+      font-size: 22px
+    &_des
+      @extend .features-item_des
+      font-size: 16px
+      margin-top: 0
+.viwed
+  position: absolute
+  left: 15px
+  top: 180px
+  color: #fff
+  font-size: 22px
+  z-index: 99
+  &_num
+    font-size: 14px
+    position: relative
+    top: -2px
+
+.date
+  @extend .viwed
+  right: -107px
+  top: 180px
+  &_num
+    @extend .viwed_num
+
+/*TEAM*/
+.team
+  @extend .features
+  min-height: 700px
+  &_title
+    @extend .features_title
+    text-transform: capitalize
+  &_des
+    @extend .features_des
+  &-item
+    min-height: 300px
+    text-align: center
+    &_icon
+      font-size: 50px
+      width: 150px
+      height: 150px
+      margin: 0 auto 0 auto
+    &_title
+      @extend .features-item_title
+      font-size: 22px
+      font-weight: normal
+    &_des
+      @extend .features-item_des
+      font-size: 16px
+      margin: 0 auto 10px auto
+    &_about
+      width: 70%
+      display: block
+      font-size: 14px
+      margin: 0 auto 10px auto
+
+/*STATS*/
+.stats
+  @extend .features
+  &_title
+    @extend .features_title
+    text-transform: capitalize
+  &_des
+    @extend .features_des
+    margin-bottom: 25px
+  &-item
+    min-height: 170px
+    text-align: center
+    &_icon
+      padding-left: 15px
+      font-size: 48px
+      width: 80px
+      height: 80px
+      margin: 0 auto
+    &_title
+      @extend .features-item_title
+      font-size: 24px
+      font-weight: bold
+    &_des
+      @extend .features-item_des
+      font-size: 14px
+      margin: -5px auto 0 auto
+
+.testimonial
+  margin-top: 30px
+  text-align: center
+  &-item
+    min-height: 300px
+    &_icon
+      @extend .team-item_icon
+    &_title
+      @extend .features-item_title
+      font-size: 22px
+      font-weight: normal
+    &_des
+      @extend .features-item_des
+      font-size: 16px
+      margin: 0 auto 10px auto
+    &_about
+      @extend .features-item_des
+      font-size: 20px
+      position:  relative
+      margin: 0 auto
+      width: 50%
+      &:before
+        font-family: 'FontAwesome', sans-serif
+        font-size: 20px
+        font-weight: normal
+        font-style: normal
+        line-height: 1
+        position: absolute
+        top: 0
+        left: -70px
+        display: block
+        content: '\f10d'
+      &:after
+        font-family: 'FontAwesome', sans-serif
+        font-size: 20px
+        font-weight: normal
+        font-style: normal
+        line-height: 1
+        position: absolute
+        top: 50px
+        right: -70px
+        display: block
+        content: '\f10e'
+
+/*CONTACTS*/
+.contacts
+  @extend .features
+  padding-top: 100px
+  padding-bottom: 120px
+  &_title
+    @extend .features_title
+    text-transform: capitalize
+  &_des
+    @extend .features_des
+    margin-bottom: 50px
+  &-item
+    min-height: 170px
+    text-align: center
+    &_icon
+      font-size: 22px
+      width: 40px
+      height: 40px
+      margin: 0 auto
+    &_title
+      @extend .features-item_title
+      font-size: 24px
+      font-weight: normal
+      line-height: 1
+    &_des
+      @extend .features-item_des
+      line-height: 1
+      font-size: 14px
+      margin: 0 auto
+      width: 45%
+
+.contact-form
+  width: 50%
+  margin: 0 auto
+  &_email
+    width: 100%
+    height: 60px
+    margin-bottom: 30px
+    border: 2px solid #000
+    padding-left: 20px
+  &_name
+    @extend .contact-form_email
+  &_message
+    @extend .contact-form_email
+    padding-top: 20px
+    height: auto
+    margin-bottom: 20px
+  &_submit
+    @extend .home_btn
+    background: none
+    cursor: pointer
+  @include placeholder()
+    font-size: 16px
+    color: #898989
+
+/*FOOTER*/
+.footer
+  @extend .features
+  background: #000000
+  color: #fff
+  &_title
+    @extend .features_title
+  &_des
+    @extend .features_des
+  &_items
+    list-style: none
+  &_item
+    font-size: 16px
+    color: #fff
+    &:hover
+      color: #fff
+
+.footer-form
+  @extend .contact-form
+  width: 100%
+  padding-left: 25px
+  margin: 0 auto 100px auto
+  &_email
+    @extend .contact-form_email
+    width: 82%
+  &_submit
+    @extend .home_btn
+    background: #fff
+    color: #000
+    cursor: pointer
+  @include placeholder()
+    font-size: 16px
+    color: #898989
+
+/*WIDGETS*/
+  /*TO UP*/
+.to-up
+  display: none
+  position: fixed
+  right: 30px
+  bottom: 30px
+  width: 50px
+  height: 50px
+  background: #fcdb00
+  &:hover
+    box-shadow: 0 0 30px #ffc219
+    transition: box-shadow .25s
+  &_link
+    padding-left: 25%
+    padding-top: 20%
+    font-size: 26px
+    display: block
+    color: #222
+
+/*WORKS VIWER*/
+.popup
+  position: absolute
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  display: none
+  text-align: center
+  z-index: 999
+
+.popup_bg
+  background: rgba(0,0,0,0.8)
+  position: fixed
+  z-index: 1
+  height: 100%
+  width: 100%
+
+
+.popup_img
+  position: fixed
+  z-index: 9
+  max-height: 94%
+  max-width: 94%
+  margin: 10% 0 0 -5%
+
+/*MODIFICATORS*/
+.-rounded
+  border-radius: 50%
+
+.-grey-bg
+  background: #ebebeb
+
+.-black-bg
+  background: #010101
+
+.-grey-text
+  background: #ebebeb
+
+.-black-text
+  background: #010101
+
+.-white-text
+  color: #fff
+
+.-home-btn
+  padding: 10px
+  width: 250px
+  font-size: 22px
+  margin: 40px auto 0 auto
+
+.-contact-btn
+  padding: 10px
+  width: 160px
+  font-size: 16px
+  margin: 0 auto
+
+.-prices-btn
+  padding: 10px
+  width: 140px
+  font-size: 16px
+  margin: 30px auto 0 auto
+
+.-footer-btn
+  padding: 16px
+  width: 130px
+  font-size: 16px
+  display: inline-block
+  &:hover
+    background: #fff
+    color: #000
+
+.-img-responsive
+  max-width: 100%
+  height: auto
+  display: inline-block
+
+.-social-team
+  font-size: 16px
