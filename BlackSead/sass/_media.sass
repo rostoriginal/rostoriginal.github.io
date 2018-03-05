@@ -1,0 +1,82 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1080px)
+	.container
+		width: 90%
+	.header_nav-link
+		font-size: 1em
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.header
+		.container
+			grid-gap: 20px
+		&_nav
+			display: none
+			transition: display .5s ease-out
+			grid-gap: 20px
+			grid-area:  toogle
+			grid-column-start: 1
+			&-item:after
+				content: ''!important
+		.nav_toogle
+			  grid-area: nav/row2-start
+	.slide_title
+		font-size: 3em
+	.slide_btn
+		font-size: 1.5em
+	.nav_toogle
+		display: inline-block
+		justify-self: end
+	.ability_item
+		padding: 0 4rem
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+	.slide_title
+		font-size: 2em
+	.ability_title
+		font-size: 1.5em
+	.ability_item
+		padding: 0 2rem
+	.ability_title,	
+	.ability_des,
+	.testimonial_quote
+		width: 100%
+		line-height: 1.4
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+	.header .logo_link
+		font-size: 1.85em
+	.slide_title
+		font-size: 1.85em
+	.slide_btn
+		padding: 10px 45px
+		font-size: 1em
+	.ability_title
+		font-size: 1.25em
+	.ability_item
+		padding: 0 1rem
+	.form-box
+    	width: 100%
+    	height: 439px
+    	background: #fff
+    	border-radius: 10px
+	.contact_form-input
+		width: 220px
+	.contact_form-btn
+		font-size: 2em
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	.ability_item
+		font-size: 3em	
+	.header .logo_link
+		font-size: 1.5em
+	.testimonial_info
+		grid-gap: 5px
+	.testimonial_icon
+		font-size: 7em

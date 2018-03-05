@@ -1,0 +1,253 @@
+@import "fonts"
+@import "libs"
+@import "base"
+@import "vars"
+
+/***HEADER***/
+.header
+    background: $blue
+    padding: 28px 10px
+    min-height: 50px
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    z-index: 999
+    .container
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: auto
+        grid-template-areas: "logo nav"
+        align-items: center
+    .logo
+        grid-area: logo
+    .logo_link
+        font-size: 2.5em
+        color: #fff
+    &_nav
+        display: flex
+        justify-content: space-between
+        align-items: center
+        grid-area: nav
+        &-item:not(:last-child)::after
+            content: '/'
+            position: relative
+            padding: 0 0 0 20px
+            color: #fff
+        &-link
+            display: inline-block
+            text-transform: uppercase
+            color: #ffffff
+            font-size: 1.125em
+.nav_toogle
+    color: #fff
+    font-size: 3em
+    cursor: pointer
+    display: none 
+    grid-area: nav
+
+/***SLIDER***/
+.slider
+    min-height: 100vh
+    background-position: top
+    background-size: cover
+    align-content: center
+    text-align: center
+    padding: 60px 0 0 0
+    position: relative
+    overflow: hidden
+    &_nav
+        position: relative
+        display: flex
+        justify-content: center
+        margin: -150px 0 0 0
+        &-item
+            margin-right: 30px
+        &-link
+            display: block
+            box-sizing: border-box
+            border: 3px solid #d8d8d8
+            padding: 4px
+            background: rgba(255, 255, 255, .059)
+            border-radius: 50%  
+.slide
+    width: 100%
+    padding: 0
+    min-height: 100vh
+    background-position: bottom center
+    background-size: cover
+    text-align: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    animation: slidein .7s alternate ease-in-out
+    &_title
+        margin: 0 auto
+        width: 70%
+        font-size: 4em
+        color: #fff
+        text-transform: uppercase
+        font-weight: bold
+        line-height: 1.2
+    &_des
+        font-size: 28px
+        text-transform: uppercase
+        margin: 0 0 40px 0
+        font-weight: 300
+    &_btn
+        background-color: rgba(255, 255, 255, .059)
+        color: #fff
+        font-size: 1.875em
+        padding: 15px 90px
+        border: 3px solid rgb(175, 177, 180)
+        display: inline-block
+        margin: 40px auto
+        border-radius: 5px
+
+
+.-active-slide
+    background: rgba(255, 255, 255, .5)
+
+/***ABILITY***/
+.ability
+    min-height: 60vh
+    text-align: center
+    padding: 90px 20px
+    box-sizing: border-box
+    position: relative
+    .container
+        justify-items: center
+    &_title
+        font-size: 1.875em
+        color: #4c505c
+        width: 70%
+        line-height: 1.5
+    &_des
+        line-height: 1.5
+        color: #4c505c
+        font-size: 0.875em   
+        margin: 40px 0 0
+        width: 85%
+    &_items
+        display: flex
+        padding: 80px 0 0
+    &_item
+        color: $blue
+        font-size: 4em
+        padding: 0 8rem
+        
+/***TESTIMONIALS***/
+.testimonial
+    @extend .ability
+    min-height: 50vh
+    background: #00d089
+    .container
+        justify-items: center
+        grid-gap: 50px
+    &_info
+        grid-template-columns: 1fr 1fr
+        grid-gap: 30px
+    &_img
+        width: 135px
+        height: 135px
+    &_title
+        color: #e4e4e4
+        text-transform: uppercase
+        font-size: 1.625em
+        font-weight: bold
+    &_icon
+        color: #fff
+        font-size: 8em
+        opacity: .2
+    &_quote
+        color: #ffffff
+        line-height: 2
+        width: 78%
+.t-box
+    display: grid
+    height: 135px
+
+
+/***CONTACT***/
+.contact
+    @extend .ability
+    background: #fff url(../img/map.png) bottom
+    background-size: cover
+    &_form
+        grid-gap: 15px
+        justify-content: center
+        padding: 111px 70px
+        &-input
+            padding: 10px
+            font-size: 0.875em
+            width: 275px
+        &-input::placeholder
+            color: #4c505d
+            font-size: 0.875em
+            opacity: .5
+        &-btn
+            border: none
+            background: $green
+            width: 66px
+            height: 67px
+            color: #fff
+            font-size: 3em
+            border-radius: 50%
+            margin: 15px auto
+            cursor: pointer
+            transition: box-shadow .5s ease
+            z-index: 2
+            &:hover
+                box-shadow: 1px 1px 3px rgba(0,0,0,.6)
+.form-box
+    width: 439px
+    height: 439px
+    background: #fff
+    border-radius: 50%
+    opacity: 0.851
+    margin: 20px auto
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3)
+
+/***FOOTER***/
+.footer
+    background: $green
+    padding: 15px 10px
+    text-align: center
+    color: #fff
+    font-size: 0.875em
+    text-transform: uppercase
+
+/*TO UP*/
+.to-up
+  display: block
+  position: fixed
+  right: 30px
+  bottom: 30px
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  background: $blue
+  &:hover
+    box-shadow: 0 0 30px $blue
+    transition: box-shadow .25s
+  &_link
+    padding-left: 25%
+    padding-top: 20%
+    font-size: 26px
+    display: block
+    color: #fff
+    
+  
+/**ANIMATION**/
+@keyframes slidein
+  from
+    opacity: .5
+  to
+    opacity: 1
+
+@keyframes pulse
+    to
+        transform: scale(2)
+        background: #ffffff
+        opacity: 0
+        
+@import "media" 

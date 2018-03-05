@@ -1,0 +1,199 @@
+@import "fonts"
+@import "libs"
+@import "base"
+@import "vars"
+
+.grid
+    display: grid
+/**LOGO**/
+.logo_link
+    display: inline-block
+    width: 25px
+    height: 25px
+    margin-top: 30px
+
+/**SIDEBAR**/
+.sidebar
+    width: 100px
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: #fff
+    position: absolute
+    left: 0
+    bottom: 0
+    top: 0
+    z-index: 999
+    box-shadow: 0px 0px 25px 0px rgba(219, 219, 219, 0.5)
+    box-sizing: border-box
+    &_nav
+        margin: 60px 0 0 0
+        &-item
+            margin: 0 0 40px 0
+        &-item:last-child
+            position: absolute
+            bottom: 40px
+        &-link
+            display: block
+            color: #d8d8d8
+            font-size: 20px
+
+/**SLIDER**/
+.slider
+    margin-left: 100px
+    max-height: 100vh
+    position: relative
+    overflow: hidden
+    &_nav
+        position: absolute
+        right: 120px
+        bottom: 60px
+        display: flex
+        &-item
+            margin-right: 30px
+        &-link
+            display: block
+            box-sizing: border-box
+            border: 3px solid #d8d8d8
+            padding: 4px
+            background: rgba(255, 255, 255, .059)
+            border-radius: 50%
+.slide
+    width: 100%
+    padding: 0
+    min-height: 100vh
+    background-position: bottom center
+    background-size: cover
+    text-align: center
+    display: flex
+    flex-direction: column
+    animation: slidein 1s alternate ease-in-out
+    &_title
+        padding: 50px 0 0 0
+        font-size: 180px
+        text-transform: uppercase
+        font-weight: 300
+        margin: 0 0 30px 0
+    &_des
+        font-size: 28px
+        text-transform: uppercase
+        margin: 0 0 40px 0
+        font-weight: 300
+    &_btn
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 200px
+        height: 50px
+        position: relative
+        font-size: 16px
+        font-weight: 700
+        margin: 0 auto
+        background: $blue
+        color: #ffffff
+        border-radius: 25px
+        text-transform: uppercase
+        overflow: hidden
+        box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.5)
+
+/**NAVIGATION**/
+.mainNav
+    position: fixed
+    right: -300px
+    top: 0
+    bottom: 0
+    width: 300px
+    min-height: 100vh
+    background: #fff
+    z-index: 999
+    box-shadow: 0px 0px 25px 0px rgba(219, 219, 219, 0.5)
+    box-sizing: border-box
+    display: flex
+    align-items: center
+    transition: right .7s ease
+    &_showAllCat
+        position: absolute
+        display: block
+        bottom: 40px
+        left: 70px
+        font-size: 14px
+        color: $blue
+        text-transform: uppercase
+        text-align: center
+        &:hover
+            &:after
+                content: ''
+                position: absolute
+                bottom: -15px
+                left: 10px
+                right: 0
+                width: 150px
+                border-bottom: 2px solid $blue
+                animation: showCat 0.7s ease-out
+    &_btn
+        background: #ffffff
+        padding: 20px
+        position: absolute
+        top: 30px
+        right: 30px
+        border-radius: 50%
+        box-shadow: 0px 0px 25px 0px rgba(219, 219, 219, 0.5)
+        z-index: 9999
+        i
+            color: $blue
+            font-size: 16px
+    &-content
+        padding: 0 40px
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+    &_link
+        display: block
+        text-transform: uppercase
+        color: #c1c1c1
+        padding: 30px 0
+        display: flex
+        align-items: center
+        margin: 0 30px 0 0
+        transition: color .5s ease
+        &:hover
+            color: $blue
+    &_item
+        &-icon
+            padding: 0 0 0 30px
+
+/**MODIFICATORS**/
+.-active-slide
+    background: $blue
+    border: 3px solid rgba(255, 255, 255, .059)
+.pulse
+    width: 100px
+    height: 100px
+    background: #4056df
+    border-radius: 50%
+    animation: pulse 0.7s ease-out
+    transform: scale(0)
+    position: absolute
+
+/**ANIMATION**/
+@keyframes slidein
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes pulse
+    to
+        transform: scale(2)
+        background: #ffffff
+        opacity: 0
+
+@keyframes showCat
+     from
+        transform: scale(0)
+     to
+        transform: scale(1)
+
+// MEDIA QUERIES
+@import "media"
